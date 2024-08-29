@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}2N OS Automated tests{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/flatly.css') }}">
+{% endblock %}
+
+<div class="container-fluid">
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+    {% include 'intercom_table.html' %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.1/socket.io.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="static/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+    <script type="module" src="static/js/main.js"></script>
+    <script src="https://unpkg.com/htmx.org@1.4.1"></script>
+{% endblock %}

@@ -1,0 +1,1 @@
+export const interval = 1000; // ajax request for retrieving testruns status will be sent within this interval
